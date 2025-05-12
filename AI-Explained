@@ -1,7 +1,23 @@
-This project implements an AI-powered version of Flappy Bird using Python, Pygame for graphics, and the NEAT (NeuroEvolution of Augmenting Topologies) algorithm for evolving neural networks. Unlike hardcoded bots or pre-trained models, this AI starts with zero knowledge of how to play and learns entirely through trial and error. Every bird in the game is controlled by its own neural network, which makes decisions based on simple sensory inputs and receives rewards based on how long it survives and how many pipes it passes.
+This project implements an AI-powered version of Flappy Bird using Python, Pygame for graphics, and the 
+NEAT (NeuroEvolution of Augmenting Topologies) algorithm for evolving neural networks. Unlike hardcoded 
+bots or pre-trained models, this AI starts with zero knowledge of how to play and learns entirely through trial 
+and error. Every bird in the game is controlled by its own neural network, which makes decisions based on simple 
+sensory inputs and receives rewards based on how long it survives and how many pipes it passes.
 
-The AI receives three inputs each frame: the bird's vertical position, the vertical distance to the top of the next pipe, and the distance to the bottom of the same pipe. These values are processed by a compact feedforward neural network, which produces a single output. If this output exceeds a certain threshold (e.g. 0.5), the bird chooses to flap (jump); otherwise, it falls. Over the course of each generation, a population of birds is evaluated, and their performance is measured using a fitness function that rewards survival time and progress while penalizing crashes.
+The AI receives three inputs each frame: the bird's vertical position, the vertical distance to the top of 
+the next pipe, and the distance to the bottom of the same pipe. These values are processed by a compact 
+feedforward neural network, which produces a single output. If this output exceeds a certain threshold 
+(e.g. 0.5), the bird chooses to flap (jump); otherwise, it falls. Over the course of each generation, a 
+population of birds is evaluated, and their performance is measured using a fitness function that rewards 
+survival time and progress while penalizing crashes.
 
-NEAT enhances this learning by evolving both the weights and structures (topologies) of the neural networks across generations. High-performing birds are selected, mutated, and recombined to form the next generation, gradually increasing the population’s skill. Unlike traditional neural network training which requires backpropagation and labeled data, NEAT relies on simulated evolution — introducing diversity and complexity organically as the networks improve.
+NEAT enhances this learning by evolving both the weights and structures (topologies) of the neural networks 
+across generations. High-performing birds are selected, mutated, and recombined to form the next generation, gradually 
+increasing the population’s skill. Unlike traditional neural network training which requires backpropagation 
+and labeled data, NEAT relies on simulated evolution — introducing diversity and complexity organically as the networks improve.
 
-This project also includes features for persistence and visualization. The AI's progress is saved after each generation, allowing it to resume training from the last checkpoint rather than starting over. The best-performing bird is preserved separately for potential replay or analysis. Additionally, a live-updating graph shows the best fitness score per generation, providing an intuitive overview of the AI’s learning curve. With nothing but basic inputs and a goal, the bird learns to fly — not through instruction, but through experience and evolution.
+This project also includes features for persistence and visualization. The AI's progress is saved after each 
+generation, allowing it to resume training from the last checkpoint rather than starting over. The best-performing 
+bird is preserved separately for potential replay or analysis. Additionally, a live-updating graph shows the best fitness 
+score per generation, providing an intuitive overview of the AI’s learning curve. With nothing but basic inputs and a 
+goal, the bird learns to fly — not through instruction, but through experience and evolution.
